@@ -1,0 +1,56 @@
+body {
+    background-color: #07090F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#choicesContainer {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+#choiceEntry {
+    width: 100%;
+    height: 8vh;
+    background-color: #FAD961;
+    background-image: linear-gradient(90deg, #FAD961 0%, #F76B1C 100%);
+    
+
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-content: center;
+    margin-bottom: 1vh;
+    color: white;
+    font-size: 36px;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Nunito', sans-serif; */
+    /* font-family: 'Quicksand', sans-serif; */
+    border-radius: 12px;
+}
+
+#choiceInput {
+    width: 50%;
+    height: 2vw;
+    min-height: 60px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+#choiceInput input{
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    border: none;
+    font-size: 36px;
+    padding: 10px;
+}
+
+
+textarea:focus, input:focus{
+    outline: none;
+}
