@@ -11,24 +11,42 @@ window.onload = function() {
 }
 
 function addChoice(choice) {
-    choicesArray.push(choice);
+    var choiceObj = initializeChoiceEntry(choice);
+    choicesArray.push(choiceObj);
     var choicesContainer = document.getElementById("choicesContainer");
-    var choiceEntry = createChoiceEntry(choice);
+    var choiceEntry = createChoiceEntry(choiceObj);
     choicesContainer.appendChild(choiceEntry);
 }
 
-function updateDom() {
-    var choicesContainer = document.getElementById("choicesContainer");
-    for (var i = 0; i < choicesArray.length; i++)
-    {
-        var choiceEntry = createChoiceEntry(choicesArray[i]);
-        choicesContainer.appendChild(choiceEntry);
-    }
+function initializeChoiceEntry(choice) {
+    return {choiceName: choice, voteCount: 0};
 }
 
 function createChoiceEntry(choice) {
     var choiceDiv = document.createElement("div");
+    var choiceButton = document.createElement("button");
     choiceDiv.id = "choiceEntry";
-    choiceDiv.innerText = choice;
+    choiceButton.id = choicesArray.length - 1;
+    choiceButton.className = "choiceButton"
+    choiceButton.innerHTML = choice.choiceName + " " + choice.voteCount;
+    choiceButton.addEventListener("click", buttonClicked);
+    choiceDiv.appendChild(choiceButton);
     return choiceDiv;
+}
+
+function updateVoteCount(choiceNumber) {
+    var choiceInt = parseInt(choiceNumber, 10);
+    choicesArray[parseInt(choiceNumber, 10)].voteCount++;
+}
+
+function updateChoiceButton(buttonId) {
+    var currentButton = document.getElementById(buttonId);
+    var newButtonInfo = currentButton.innerHTML.slice(0, currentButton.innerHTML.indexOf(" "));
+    currentButton.innerHTML = newButtonInfo + " " + choicesArray[parseInt(buttonId, 10)].voteCount;
+}
+
+function buttonClicked(event){
+    console.log("Button " + this.id + " clicked");
+    updateVoteCount(this.id);
+    updateChoiceButton(this.id);
 }
