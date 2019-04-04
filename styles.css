@@ -3,6 +3,104 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#navBar {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    background: white;
+}
+
+#logoContainer {
+    display: flex;
+    height: 100%;
+    width: 120px;
+    position: relative;
+    align-content: center;
+    justify-content: center;
+}
+
+#logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 50%;
+}
+
+#welcomeScreen {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#jumbotron {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+#jumbotronHeader {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.jumbo {
+    font-size: 3.25vw;
+    margin-bottom: 0;
+}
+
+#flavorText {
+    font-family: 'Lato';
+    font-size: 1.25vw;
+    color: grey;
+    width: 50%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#newPollButtonContainer {
+    position: relative;
+    width: 250px;
+    height: 80px;
+    border-radius: 18px;
+    /* background: rgb(8,2,121); */
+    background-image: linear-gradient(45deg, rgba(8,2,121,1) 0%, rgba(56,56,194,1) 35%, rgba(0,212,255,1) 100%);
+    -webkit-box-shadow: 0px 10px 36px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 36px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 36px -11px rgba(0,0,0,0.75);
+    /* transition: box-shadow .2s; */
+}
+
+#newPollButtonContainer:hover {
+    -webkit-box-shadow: 0px 10px 24px -11px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 10px 24px -11px rgba(0,0,0,0.75);
+    box-shadow: 0px 10px 24px -11px rgba(0,0,0,0.75);
+}
+
+#newPollButton {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    color: whitesmoke;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+}
+
+#newPollButton:focus {
+    outline: none;
+    border: none;
 }
 
 #choicesContainer {
