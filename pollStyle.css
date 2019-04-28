@@ -1,0 +1,383 @@
+@keyframes fadein {
+    from {
+      opacity: 0;
+    }
+  }
+
+#pollContainer {
+    display: inline-block;
+    width: 40%;
+    min-width: 600px;
+    border-radius: 30px;
+}
+
+#pollBody {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    background: white;
+    border-radius: 30px;
+    -webkit-box-shadow: 0px 0px 40px -8px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 0px 40px -8px rgba(0,0,0,0.5);
+    box-shadow: 0px 0px 40px -8px rgba(0,0,0,0.5);
+    flex-direction: column;
+    position: relative;
+  }
+  
+  #pollTitle {
+    z-index: 2;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Rubik';
+    position: relative;
+    color: rgb(60,60,60);
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #pollTitle h2{
+    z-index: 2;
+    font-size: 2em;
+    text-align: center;
+  }
+  
+  #separator {
+    width: 25%;
+    height: 2px;
+    background: rgb(26,22,99);
+    background: linear-gradient(90deg, rgba(26,22,99,1) 0%, rgba(9,9,121,1)                 32%, rgba(0,212,255,1) 100%);
+    position: absolute;
+    bottom: 0;
+    border-radius: 1px
+  }
+  
+  #pollChoices {
+    z-index: 2;
+    flex: 100;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  #choices {
+    font-family: "Montserrat";
+    font-size: 24px;
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  
+  .choice {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    flex: 1;
+    /* border-bottom: 1px solid lightgrey;
+    border-left: 0px solid rgb(5,90,174);
+    transition: .2s border-left, .2s color; */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+    opacity: 1;
+    animation: fadein .5s;
+  }
+
+  .choice input {
+      width: 90%;
+      height: 90%;
+      border: 2px solid lightgray;
+      border-radius: 10px;
+      background-color: whitesmoke;
+      font-family: "Montserrat";
+      padding-left: 5%;
+      box-sizing: border-box;
+      font-size: 1em;
+      transition: .3s border-color;
+  }
+
+  .choice input:focus {
+      border-color: rgb(5,90,174);
+  }
+  
+  .choice p{
+    z-index: 2;
+  }
+  
+  .choice:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  
+  /* .choice:hover {
+   color: rgb(5,90,174);
+   border-left: 4px solid rgb(5,90,174);
+  } */
+  
+  /* .choice.selected {
+    border-left: 16px solid rgb(5,90,174);
+    color: rgb(5,90,174);
+  } */
+  
+  button {
+    background: linear-gradient(45deg, rgba(26,22,99,1) 0%, rgba(9,9,121,1)                 32%, rgba(0,212,255,1) 100%);
+    width: 100%;
+    height: 100%;
+    font-size: inherit;
+    font-family:'Montserrat';
+    border: none;
+    color: white;
+    border-radius: inherit;
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+  }
+  
+  button:focus {
+    outline: none;
+    border: none;
+  }
+  
+  #submitWrapper {
+    width: 100%;
+    height: 120px;
+    border-radius: 0px 0px 16px 16px;
+    font-size: 24px;
+    border-top: 1px solid rgb(5,90,174);
+    position: relative;
+  }
+  
+  #fade {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: white;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat";
+    color: rgb(5,90,174);
+    opacity: 1;
+    transition: .2s opacity, .2s background-color; 
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+  }
+  
+  #fade:hover {
+    opacity: 0;
+  }
+  
+  #fade:active {
+    background-color: rgb(0,0,0);
+    opacity: .2;
+  }
+  
+  li {
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+  }
+  
+  #submitOverlay {
+    display: flex;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #submitConfirmation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background-color: white;
+    transition: .3s opacity;
+    opacity: 0;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #submitOverlay.show {
+    z-index: 3;
+  }
+  
+  #submitConfirmation.show {
+    opacity: .75;
+  }
+  
+  #checkmarkContainer {
+    z-index: 1;
+    width: 0;
+    height: 0;
+    border: 2px solid rgb(4, 120,194);
+    border-radius: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .2s height, .2s width;
+    opacity: 0;
+  }
+  
+  #checkmark {
+    z-index: 2;
+    width: 25%;
+    height: 45%;
+    position: relative;
+    transform: rotate(45deg);
+    bottom: 8%
+  }
+  
+  #bottom {
+    position: absolute;
+    height: 2px;
+    width: 0;
+    background-color: rgb(4,120,194);
+    bottom:0;
+    left: 0;
+    transition: .2s .2s width;
+  }
+  
+  #top {
+    width: 2px;
+    height: 0;
+    background-color: rgb(4,120,194);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    transition: .2s .4s height;
+  }
+  
+  #checkmark.show #top {
+    height: 100%;
+  }
+  
+  #checkmark.show #bottom {
+    width: 100%;
+  }
+  
+  #checkmarkContainer.show {
+    opacity: 1;
+    height: 150px;
+    width: 150px;
+  }
+  
+  .percentageOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: rgb(4, 120,194);
+    transition: .2s width;
+  }
+
+  #questionTitleInput {
+      width: 90%;
+      height: 80%;
+      border: none;
+      border-bottom: 2px solid lightgrey;
+      font-size: 2em;
+      color: rgb(60,60,60);
+      font-family: 'Rubik';
+      transition: .3s border-color;
+  }
+
+  #questionTitleInput::placeholder {
+      color: lightgray;
+  }
+
+  #questionTitleInput:focus {
+      border-color: rgb(5,90,174);
+  }
+
+  #pollChoices {
+      display: flex;
+      width: 100%;
+      align-items: center;
+  }
+
+  .invisible {
+      opacity: 0;
+  }
+
+  #addChoice {
+      width: 30%;
+      height: 80px;
+      border-radius: 10px;
+      margin: 10px;
+  }
+
+  #addChoice button {
+      background: rgb(4,120,194);
+      color: white;
+      font-weight: bold;
+      transition: .2s background-color;
+  }
+
+  #addChoice button:hover {
+    background: rgb(1, 93, 150);
+    color: white;
+    font-weight: bold;
+}
+  
+  @media (max-width: 600px) {
+    #pollBody {
+      width: 100vw;
+      height: 100%;
+      border-radius: 0;
+      min-width: 200px;
+    }
+    
+    #submitWrapper {
+      border-radius: 0;
+    }
+    
+    #pollTitle h2 {
+      font-size: 1.6em;
+    }
+    
+    #choices {
+      font-size: 20px;
+    }
+    
+    #submit {
+      font-size: 20px;
+    }
+    
+    #fade {
+      font-size: 20px;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 1250px) {  
+    #pollTitle h2 {
+      font-size: 1.6em;
+    }
+  }

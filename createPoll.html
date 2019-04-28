@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ULTRA LUNCH VOTING ENGINE 1.0</title>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:700|Quicksand|Rubik|Assistant:700" rel="stylesheet"> 
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="pollStyle.css">
+        <script src="index.js"></script>
+    </head>
+    <body>
+        <div id="navBar">
+            <div id="logoContainer"><image id="logo" src="img/pollskylogo.svg"/></div>
+        </div>
+        <div id="welcomeScreen">
+            <div id="pollContainer">
+                <form id="pollBody">
+                    <div id="pollTitle"><input id="questionTitleInput" type="text" placeholder="Question"></div>
+                        <div id="pollChoices">
+                        <ul id="choices">
+                            <li class="choice" id="1"><input type="text" placeholder="Option 1"></li>
+                            <li class="choice" id="2"><input type="text" placeholder="Option 2"></li>
+                            <li class="choice" id="3"><input type="text" placeholder="Option 3"></li>
+                            <!-- <li class="choice" id="4" onclick="selected('4')"><div class="percentageOverlay"></div><p>Freshii</p></li>
+                            <li class="choice" id="5" onclick="selected('5')"><div class="percentageOverlay"></div><p>Tusk and Trotters</p></li> -->
+                        </ul>
+                        <div id="addChoice"><button type="button" onclick="addChoiceInput()">+ Add Choice</button></div>
+                        <div id="submitWrapper"><div id="fade" onclick="submit()">Submit</div><button id="submit">Submit</button></div>
+                        </div>
+                        <div id=submitOverlay>
+                        <div id="checkmarkContainer">
+                            <div id="checkmark">
+                            <div id="bottom"></div>
+                            <div id="top"></div>
+                            </div>
+                        </div>
+                        <div id="submitConfirmation"></div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- <div id="choiceInput"><input id="choiceInputField" type="text" placeholder="Input Suggestion Here"/></div>
+        <div id="choicesContainer">
+
+        </div> -->
+        
+    </body>
+</html>

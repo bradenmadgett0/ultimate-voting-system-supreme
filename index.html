@@ -2,8 +2,9 @@
 <html>
     <head>
         <title>ULTRA LUNCH VOTING ENGINE 1.0</title>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:700|Quicksand|Assistant:700" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Nunito:700|Quicksand|Rubik|Assistant:700" rel="stylesheet"> 
         <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="pollStyle.css">
         <script src="index.js"></script>
     </head>
     <body>
@@ -16,12 +17,14 @@
                     <h1 class="jumbo">Welcome to the premiere poll voting system.</h1>
                 </div>
                 <div id="flavorText"><p>Have a question that needs answering? Do it in style. Create crowd-curated polls with a click of a button and get the answers you need.</p></div>
-                <div id="newPollButtonContainer"><button id="newPollButton">Create New Poll</button></div>
+                <div id="newPollButtonContainer"><button id="newPollButton" onclick="location.href='createPoll.html';">Create New Poll</button></div>
             </div>
         </div>
-        <div id="choiceInput"><input id="choiceInputField" type="text" placeholder="Input Suggestion Here"/></div>
+
+        <!-- <div id="choiceInput"><input id="choiceInputField" type="text" placeholder="Input Suggestion Here"/></div>
         <div id="choicesContainer">
 
-        </div>
+        </div> -->
+        
     </body>
 </html>
